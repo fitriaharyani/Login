@@ -9,8 +9,8 @@ import android.widget.Button;
 
 public class MenuActivity extends AppCompatActivity
 {
-    private Button _tampilMahasiswaButton, _tampilForexButton;
-    private Intent _tampilMahasiswaIntent, _tampilForexIntent;
+    private Button _tampilMahasiswaButton, _tampilForexButton, _tampilCuacaButton;
+    private Intent _tampilMahasiswaIntent, _tampilForexIntent, _tampilCuacaIntent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +19,7 @@ public class MenuActivity extends AppCompatActivity
 
         initTampilMahasiswaButton();
         initTampilForexButton();
+        initTampilCuacaButton();
     }
 
     private void initTampilMahasiswaButton()
@@ -50,5 +51,20 @@ public class MenuActivity extends AppCompatActivity
             }
         });
 
+    }
+
+    private void initTampilCuacaButton()
+    {
+        _tampilCuacaButton = findViewById(R.id.tampilCuacaButton);
+
+        _tampilCuacaButton.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                _tampilCuacaIntent = new Intent(getApplicationContext(), CuacaMainActivity.class);
+                startActivity(_tampilCuacaIntent);
+            }
+        });
     }
 }
